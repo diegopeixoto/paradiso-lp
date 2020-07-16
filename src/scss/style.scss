@@ -1,0 +1,172 @@
+/*! Default Style for AQUARELA
+ * Copyright 2020 (C) AQUARELA */
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+@mixin font1($color,$size,$case,$weight) {
+  font-family: 'Roboto', sans-serif;
+  font-weight: $weight;
+  font-size: $size;
+  color: $color;
+  text-transform: $case;
+}
+
+$green: #00F2A9;
+$blue: #322153;
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   -webkit-appearance: none;
+ }
+
+ html {
+   // 1rem ~ 10px
+   font-size: 62.5%;
+ }
+
+
+ body {
+   height: 100vh;
+   background-color: gray;
+   text-rendering: optimizeLegibility !important;
+   -webkit-font-smoothing: antialiased !important;
+   font-size: 1.6rem;
+   position: relative;
+ }
+
+
+ .content {
+   width: 100%;
+   margin: auto;
+   padding: 0 30px;
+ }
+
+
+ main {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 100%;
+   overflow-x: hidden;
+   & div#app {
+    background-color: #fff;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     align-content: center;
+     justify-content: space-between;
+     width: 100%;
+     height: 100%;
+     max-width: 450px;
+     flex-wrap: nowrap;
+     & .video {
+       img {
+       width: 100%;
+       height: 100%;
+       }
+     }
+   }& .slide-main {
+     height: 100%;
+     width: 100%;
+     margin: 50px 0;
+     & .content {
+       & h1 {
+         @include font1($green, 6rem, none, 400);
+         line-height: 6rem;
+         word-spacing: 1rem;
+       }
+       & p {
+        margin: 15px 0;
+        @include font1 (black, 2rem, none, 400);
+        line-height: 3.5rem;
+       }
+       & .slider-control {
+         margin: 20px 0 50px 0;
+         display: flex;
+        & div {
+          margin-right: 5px;
+          height: 3px;
+          background-color:#A8A8A8;
+          width: 3rem;
+          border-radius: 5px;
+          position: relative;
+        &:last-child { margin: 0
+        }&.active::after {
+          position: absolute;
+          content: '';
+          background-color:#303030;
+          height: 3px;
+          width: 65%;
+          border-radius: 5px;
+          z-index: 50;
+        }}
+        }
+     }
+   }& .what-to-know{
+      background-color: $green;
+      height: 1920px;
+      width: 100%;
+      padding: 35px 0;
+      & .content {
+        & h1 {
+          line-height: 3.5rem;
+          @include font1($blue, 3rem, none, 400);
+        }
+        & .card {
+          padding: 35px 20px;
+          position: relative;
+          border-radius: 9px;
+          height: 650px;
+          width: 100%;
+          z-index: 2;
+          margin: 40px 0;
+          position: relative;
+          & img {
+            position: absolute;
+            border-radius: 9px;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+        & .info {
+          height: 100%;
+          z-index: 60;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          h1 {
+            @include font1($green, 5.5rem, none, 400);
+            line-height: 5.5rem;
+          } & p {
+            @include font1(white, 2rem, none, 400);
+            word-spacing: auto;
+            line-height: 3rem;
+          } & a {
+            @include font1($green, 1.9rem, none, 400);
+            text-decoration: none;
+          }
+        } & .shadow {
+          position: absolute;
+          background-image: url('/dist/images/shadow-card.png');
+          width: 100%;
+          height: 650px;
+          top: 0;
+          right: 0;
+          z-index: -1;
+          border-radius: 9px;
+        }
+      }
+   }& .trip {
+    background-color: #fff;
+     height: 300px;
+   }
+  }
+
