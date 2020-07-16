@@ -2,10 +2,10 @@
  * Copyright 2020 (C) AQUARELA */
 @charset "UTF-8";
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
 
 @mixin font1($color,$size,$case,$weight) {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-weight: $weight;
   font-size: $size;
   color: $color;
@@ -166,7 +166,80 @@ $blue: #322153;
       }
    }& .trip {
     background-color: #fff;
-     height: 300px;
+     height: 100%;
+     width: 100%;
+     padding: 300px 0 0 0;
+     & .content {
+      width: 100%;
+      & h1 {
+        @include font1($blue, 3.5rem, none, 400);
+        line-height: 4rem;
+      } & .trip-date {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        margin: 35px 0;
+        & .check-group {
+          position: relative;
+          & input {
+            height: 50px;
+            border-radius: 5px;
+            border: $green 1px solid;
+            background-color: #C2FFE9;
+            outline: none;
+            &:checked {
+              background-color: $green;
+            & + label {
+              color: $blue;
+            }}
+            &.weekend {
+              width: 185px;
+              margin-right: 15px;
+            }
+            &.diary {
+              width: 100px;
+            }
+          } & label {
+            pointer-events: none;
+            position: absolute;
+            left: 20px;
+            top: 13px;
+            width: 100%;
+            @include font1($green, 2rem, none, 400);
+          }
+        }
+      } & h3 {
+        @include font1($blue, 2rem, none, 400);
+      }
+      & select {
+        margin: 25px 0;
+        width: 100%;
+        height: 5rem;
+        border: none;
+        border-radius: 5px;
+        background-color: $blue;
+        @include font1($green, 1.6rem, none, 400);
+        padding: 15px 25px;
+        background-image: url('/dist/images/icon-dropdown.svg');
+        background-repeat: no-repeat;
+        background-position: center right 15px;
+        &.people {
+          background-image: url('/dist/images/icon-people.svg');
+        }
+      }
+     }
+   }
+   & .experience {
+     height: 100%;
+     width: 100%;
+     background-color:#fff;
+     & .content {
+       height: 100%;
+       & h1 {
+        @include font1($blue, 3.5rem, none, 400);
+        line-height: 4rem;
+       }
+     }
    }
   }
 
